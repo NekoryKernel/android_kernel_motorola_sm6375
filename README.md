@@ -180,3 +180,10 @@ Add the following code before the last line of this file
 
         CONFIG_HID_AKSYS_QRD=m
         CONFIG_AKSYS_QRD_FF=y
+
+
+# Informations about this kernel
+Name: Nekory Kernel
+Linux kernel version: 5.4.302
+Device(s): bangkk, fogos and etc (unified kernel source for Motorola SM6375 family)
+Maintainer: rebangkkuser (bangkkuser)
