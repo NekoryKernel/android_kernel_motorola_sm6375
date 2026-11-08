@@ -1887,8 +1887,12 @@ static int __do_execve_file(int fd, struct filename *filename,
 
 #ifdef CONFIG_KSU_SUSFS
 	/* Successful exec, filename still owned. Root consumes marker once. */
-	ksu_handle_post_execve(&fd, filename ? filename->name : NULL,
-			      &argv, &envp, &flags, &retval);
+	{
+		const char *ksu_fname = filename ? filename->name : NULL;
+
+		ksu_handle_post_execve_common(&fd, &ksu_fname,
+					      &argv, &envp, &flags, &retval);
+	}
 #endif
 	/* execve succeeded */
 	current->fs->in_exec = 0;

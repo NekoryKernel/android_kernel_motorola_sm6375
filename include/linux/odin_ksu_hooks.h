@@ -9,7 +9,7 @@ struct filename;
 #endif
 #ifdef CONFIG_KSU
 int ksu_handle_execveat(int *fd, struct filename **filename, void *argv, void *envp, int *flags);
-int ksu_handle_post_execve(int *fd, const char *filename, void *argv, void *envp, int *flags, int *retval);
+int ksu_handle_post_execve_common(int *fd, const char **filename, void *argv, void *envp, int *flags, int *retval);
 void ksu_handle_sys_read(unsigned int fd);
 void ksu_handle_vfs_fstat(int fd, loff_t *size);
 #ifdef CONFIG_KSU_SUSFS
